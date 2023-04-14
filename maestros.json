@@ -1,0 +1,27 @@
+[
+    {
+    "nombre": "Edna",
+    "mail": "ednakrabappel@gmail.com",
+    "pass": "maestraBart"
+},
+{
+    "nombre": "Denzel",
+    "mail": "denzelcrocker@gmail.com",
+    "pass": "maestroTimmy"
+},
+{
+    "nombre": "Roshi",
+    "mail": "maestroroshi@gmail.com",
+    "pass": "maestroGoku"
+},
+{
+    "nombre": "Ash",
+    "mail": "maestroash@gmail.com",
+    "pass": "maestroPikachu"
+},
+{
+    "nombre": "Ang",
+    "mail": "maestroaire@gmail.com",
+    "pass": "maestroAire"
+}
+]

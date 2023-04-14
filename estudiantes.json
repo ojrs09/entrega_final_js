@@ -1,0 +1,42 @@
+[{
+    "nombre": "Omar",
+    "apellido": "Romero",
+    "edad": 15,
+    "estatura": 1.62,
+    "img": "./multimedia/web_of_Spider-Man_Vol_1_129.1_Sin_texto.webp"
+    },
+    {
+    "nombre": "Karla",
+    "apellido": "Casanas",
+    "edad": 14,
+    "estatura": 1.25,
+    "img": "./multimedia/sailor-moon.jpg"
+    },
+    {
+    "nombre": "Edward",
+    "apellido": "Bastidas",
+    "edad": 12,
+    "estatura":1.45,
+    "img": "./multimedia/guUYd44L_400x400.png"
+    },
+    {
+    "nombre": "Yeespri",
+    "apellido": "Morales",
+    "edad": 17,
+    "estatura": 1.65,
+    "img": "./multimedia/descarga.jpg"
+    },
+    {
+    "nombre":"Diosa",
+    "apellido": "Yglesias",
+    "edad": 15, 
+    "estatura": 1.49,
+    "img": "./multimedia/Jean_Francois_Armand_Felix_Bernard_-_Fortuna.jpg"
+    },
+    {
+    "nombre": "Juan",
+    "apellido": "Casanas",
+    "edad": 12,
+    "estatura": 1.27,
+    " img": "./multimedia/Unnamed_29.webp"
+}]
