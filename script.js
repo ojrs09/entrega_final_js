@@ -3,56 +3,57 @@
 const
     btnLogin = document.getElementById('login'),
     btnAgregar = document.getElementById('agregarNota')
-    contTarjetas = document.getElementById('tarjetas'),
+contTarjetas = document.getElementById('tarjetas'),
     toggles = document.querySelectorAll('.toggles'),
     form = document.querySelector(".login")
 
-    // Librería
-    Swal.fire('Bienvenido a tu programa de estudiantes')
+// Librería
+Swal.fire('Bienvenido a tu programa de estudiantes')
 
 // Array de estudiantes (se hizo así ya que los maestros los hice con fetch, así tengo ambas vias)
 
-    const estudiantes = [{
-        nombre: 'Omar',
-        apellido: 'Romero',
-        edad: 15,
-        estatura: 1.62,
-        img: './multimedia/web_of_Spider-Man_Vol_1_129.1_Sin_texto.webp'
-        },
-        {
-        nombre: 'Karla',
-        apellido: 'Casanas',
-        edad: 14,
-        estatura: 1.25,
-        img: './multimedia/sailor-moon.jpg'
-        },
-        {
-        nombre: 'Edward',
-        apellido: 'Bastidas',
-        edad: 12,
-        estatura:1.45,
-        img: './multimedia/guUYd44L_400x400.png'
-        },
-        {
-        nombre: 'Yeespri',
-        apellido: 'Morales',
-        edad: 17,
-        estatura: 1.65,
-        img: './multimedia/descarga.jpg'
-        },
-        {nombre: 'Diosa',
-        apellido: 'Yglesias',
-        edad: 15, 
-        estatura: 1.49,
-        img: './multimedia/Jean_Francois_Armand_Felix_Bernard_-_Fortuna.jpg'
-        },
-        {
-        nombre: 'Juan',
-        apellido: 'Casanas',
-        edad: 12,
-        estatura: 1.27,
-        img: './multimedia/Unnamed_29.webp'
-    }]
+const estudiantes = [{
+    nombre: 'Omar',
+    apellido: 'Romero',
+    edad: 15,
+    estatura: 1.62,
+    img: './multimedia/web_of_Spider-Man_Vol_1_129.1_Sin_texto.webp'
+},
+{
+    nombre: 'Karla',
+    apellido: 'Casanas',
+    edad: 14,
+    estatura: 1.25,
+    img: './multimedia/sailor-moon.jpg'
+},
+{
+    nombre: 'Edward',
+    apellido: 'Bastidas',
+    edad: 12,
+    estatura: 1.45,
+    img: './multimedia/guUYd44L_400x400.png'
+},
+{
+    nombre: 'Yeespri',
+    apellido: 'Morales',
+    edad: 17,
+    estatura: 1.65,
+    img: './multimedia/descarga.jpg'
+},
+{
+    nombre: 'Diosa',
+    apellido: 'Yglesias',
+    edad: 15,
+    estatura: 1.49,
+    img: './multimedia/Jean_Francois_Armand_Felix_Bernard_-_Fortuna.jpg'
+},
+{
+    nombre: 'Juan',
+    apellido: 'Casanas',
+    edad: 12,
+    estatura: 1.27,
+    img: './multimedia/Unnamed_29.webp'
+}]
 
 // Agrego elementos necesarios al formulario y validación de usuarios
 
@@ -77,16 +78,19 @@ function validarUsuario(array, mail, pass) {
     let usuario = array.find(maestro => maestro.mail == mail);
 
     if (typeof usuario === 'undefined') {
-        return false;
+        // return false;
         // alert('Ingreso incorrecto')
+        Swal.fire('Ingreso incorrecto')
     } else {
         if (usuario.pass != pass) {
             // alert ('ingreso incorrecto')
-            return false;
+            // return false;
+            Swal.fire('Ingreso incorrecto')
         } else {
-            return usuario;
-            // alert ('ingreso correcto')
-
+            // return usuario;
+            mostrarInfoEstudiantes(estudiantes);
+            presentarInfo(toggles, 'd-none');
+            Swal.fire('Ingreso exitoso')
         }
     }
 }
@@ -102,7 +106,8 @@ function mostrarInfoEstudiantes(array) {
                 <div class="card-body">
                     <p class="card-text" id="apellidoEstudiante">Apellido: ${element.apellido} </p>
                     <p class="card-text" id="edadEstudiante">Edad: ${element.edad} años</p>
-                    <button type="submit" class="btn btn-primary" id="agregarNota" >agregarNota</button> 
+                    <button type="submit" class="btn btn-primary" id="agregarNota" >agregarNota</button>
+                    <button type="submit" class="btn btn-primary" id="verNota" >ver notas</button> 
                 </div>
             </div>`;
         contTarjetas.innerHTML += html;
@@ -117,24 +122,6 @@ function presentarInfo(array, clase) {
         element.classList.toggle(clase);
     });
 }
-
-// ---------------------REVISAR ESTA PARTE-----------------------------------------------
-// Así lo tenía en mi proyecto anterior pero ahora lo traigo a este y no me funciona
-
-if (!mailLogin.value || !passLogin.value) {
-    alert('Todos los campos son requeridos');
-} else {
-    
-    let array = validarUsuario(maestros, mailLogin.value, passLogin.value);
-
-    if (!array) {
-        alert(`Usuario o contraseña erróneos`);
-    } else {
-        //Muestro la info para usuarios logueados (con toggles)
-        mostrarInfoEstudiantes(estudiantes);
-        presentarInfo(toggles, 'd-none');
-    }
-};
 
 //Limpiar los storages
 
